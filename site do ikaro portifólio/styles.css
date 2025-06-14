@@ -1,0 +1,79 @@
+/* Personalização opcional extra */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* pequena animação nos cards de serviço */
+section:nth-of-type(2) .transition {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform .6s ease, opacity .6s ease;
+}
+section:nth-of-type(2) .transition:hover {
+  transform: translateY(-5px);
+}
+
+:root {
+  --terra1: #a0522d;
+  --terra2: #c68642;
+  --terra3: #e2b07a;
+  --terra4: #f5e1c0;
+}
+.submenu-circular {
+  width: 320px;
+  height: 320px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  display: block;
+}
+.submenu-circular.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+.submenu-circular .submenu-btn {
+  width: 120px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--terra1), var(--terra2), var(--terra3));
+  color: #fff;
+  font-weight: bold;
+  border: 3px solid var(--terra4);
+  box-shadow: 0 6px 32px 0 var(--terra1), 0 1.5px 0 0 var(--terra2) inset;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: rotate(var(--angle)) translate(0, -140px) rotate(calc(-1 * var(--angle)));
+  transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 60;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.98;
+}
+.submenu-circular .submenu-btn:hover {
+  box-shadow: 0 8px 40px 0 var(--terra2), 0 2px 0 0 var(--terra3) inset;
+  background: linear-gradient(90deg, var(--terra2), var(--terra3), var(--terra4));
+  color: var(--terra1);
+  border-color: var(--terra1);
+  transform: scale(1.08) rotate(var(--angle)) translate(0, -140px) rotate(calc(-1 * var(--angle)));
+}
+
+body, html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ff007f 0%, #014421 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

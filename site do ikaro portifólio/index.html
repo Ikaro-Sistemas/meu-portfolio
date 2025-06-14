@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Soluções em software: landing pages, sites, aplicativos, chatbots e mais. Ikaro Sistemas." />
+  <title>Ikaro Sistemas – Soluções em Software</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', Arial, sans-serif; }
+    /* Degradê rosa choque para verde escuro */
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff007f 0%, #014421 100%);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    /* Paleta de azul marinho escuro e tons */
+    .gradient-bg { background: linear-gradient(90deg, #0a2342 0%, #185b8c 50%, #4f8fc0 80%, #a7c7e7 100%); }
+    .bg-azul-escuro { background-color: #0a2342; }
+    .bg-azul-medio { background-color: #185b8c; }
+    .bg-azul-claro { background-color: #4f8fc0; }
+    .bg-azul-pastel { background-color: #a7c7e7; }
+    .text-azul-escuro { color: #0a2342; }
+    .text-azul-medio { color: #185b8c; }
+    .text-azul-claro { color: #4f8fc0; }
+    .text-azul-pastel { color: #a7c7e7; }
+    .border-azul-escuro { border-color: #0a2342; }
+    .border-azul-medio { border-color: #185b8c; }
+    .border-azul-claro { border-color: #4f8fc0; }
+    .border-azul-pastel { border-color: #a7c7e7; }
+    .hover\:bg-azul-medio:hover { background-color: #185b8c; }
+    .hover\:bg-azul-claro:hover { background-color: #4f8fc0; }
+    .hover\:bg-azul-pastel:hover { background-color: #a7c7e7; }
+    .btn-destaque-1 { background: linear-gradient(90deg, #ec4899 0%, #6366f1 100%); color: #fff; }
+    .btn-destaque-2 { background: linear-gradient(90deg, #6366f1 0%, #0ea5e9 100%); color: #fff; }
+    .btn-destaque-3 { background: linear-gradient(90deg, #f472b6 0%, #4f8fc0 100%); color: #fff; }
+    .btn-destaque-4 { background: linear-gradient(90deg, #a7c7e7 0%, #ec4899 100%); color: #fff; }
+    .btn-destaque-5 { background: linear-gradient(90deg, #0ea5e9 0%, #f472b6 100%); color: #fff; }
+    .btn-destaque-6 { background: linear-gradient(90deg, #6366f1 0%, #a7c7e7 100%); color: #fff; }
+    /* Scroll horizontal */
+    .scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .scroll-hide::-webkit-scrollbar { display: none; }
+    .scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-[#f5f8fa]">
+
+  <!-- HEADER / NAV -->
+  <!-- CABEÇALHO -->
+<header>
+  <div style="
+    display: flex; 
+    align-items: center; 
+    gap: 18px; 
+    background: linear-gradient(90deg, #0a2342 60%, #185b8c 100%);
+    color: #fff; 
+    padding: 26px 32px 26px 32px; 
+    border-bottom-left-radius: 32px; 
+    border-bottom-right-radius: 32px; 
+    box-shadow: 0 8px 32px 0 #0a234288, 0 1.5px 0 0 #185b8c inset;
+    position:relative;
+    border: 2.5px solid #4f8fc0;
+    ">
+    <!-- Ícone de programação moderno -->
+    <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:linear-gradient(135deg,#185b8c 60%,#4f8fc0 100%);border-radius:16px;box-shadow:0 2px 12px #185b8c44;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect x="2" y="6" width="28" height="20" rx="5" fill="#fff" stroke="#185b8c" stroke-width="2"/>
+        <path d="M12 16l-4 4 4-4-4-4" stroke="#185b8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 16l4 4-4-4 4-4" stroke="#185b8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="14" y="12" width="4" height="8" rx="2" fill="#185b8c"/>
+      </svg>
+    </span>
+    <span id="ikaro-titulo" style="font-size:2.1rem;font-weight:900;letter-spacing:1px;text-shadow:0 2px 8px #185b8c88;margin-left:10px;">
+      Ikaro Sistemas
+    </span>
+    <!-- WhatsApp ícone à direita -->
+    <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" style="margin-left:auto; display:flex; align-items:center; background: #fff; border-radius: 50%; box-shadow: 0 2px 12px #185b8c44; padding: 4px;">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <circle cx="19" cy="19" r="19" fill="#25D366"/>
+        <path d="M27.5 22.5c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.7-.2-1 .2-.3.4-1.1 1.2-1.3 1.4-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.7.1-.2 0-.5 0-.7 0-.2-.9-2.2-1.2-3-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.5 0 1.5 1.1 3 1.2 3.2.1.2 2.2 3.4 5.3 4.6 1.1.5 2 .8 2.7 1 .4.1.7.1 1 .1.3 0 .9-.1 1.2-.6.3-.5 1.3-1.3 1.3-1.4.1-.1.1-.2.1-.3 0-.1-.1-.2-.2-.3z" fill="#fff"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- Botão menu logo abaixo do cabeçalho, colado ao topo -->
+<div style="position:relative; margin-top: 0; margin-left: 32px;">
+  <button id="menu-icone" type="button" aria-label="Abrir menu"
+    style="background: linear-gradient(135deg, #0a2342 70%, #185b8c 100%); border: 2.5px solid #4f8fc0; border-radius: 50%; width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px #185b8c33; cursor: pointer; position:relative; z-index:100; transition: box-shadow 0.2s, background 0.2s;">
+    <!-- Ícone moderno de menu (três linhas animadas) -->
+    <span class="menu-icon-lines">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+  <div id="submenu-circular" class="submenu-circular-180">
+    <div class="submenu-circular-inner">
+      <!-- Sistemas de Gestão (primeiro, quase junto à lateral) -->
+      <a href="#" class="submenu-btn" style="--angle: -90deg;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Sistemas de Gestão" style="width:32px;height:32px;" title="Sistemas de Gestão">
+      </a>
+      <!-- E-commerce -->
+      <a href="#" class="submenu-btn" style="--angle: -55deg;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="E-commerce" style="width:32px;height:32px;" title="E-commerce">
+      </a>
+      <!-- Chatbots -->
+      <a href="#" class="submenu-btn" style="--angle: -20deg;">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Chatbots" style="width:32px;height:32px;" title="Chatbots">
+      </a>
+      <!-- Aplicativos Web -->
+      <a href="#" class="submenu-btn" style="--angle: 15deg;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" alt="Aplicativos Web" style="width:32px;height:32px;" title="Aplicativos Web">
+      </a>
+      <!-- Site Institucional -->
+      <a href="#" class="submenu-btn" style="--angle: 50deg;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Site Institucional" style="width:32px;height:32px;" title="Site Institucional">
+      </a>
+      <!-- Landing Page (último, não passa da altura do cabeçalho) -->
+      <a href="#" class="submenu-btn" style="--angle: 80deg;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="Landing Page" style="width:32px;height:32px;" title="Landing Page">
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+:root {
+  --azul-escuro1: #0a2342;
+  --azul-escuro2: #185b8c;
+  --azul-escuro3: #4f8fc0;
+  --azul-escuro4: #a7c7e7;
+}
+body { background: #f5f5f5; }
+.submenu-circular-180 {
+  width: 260px;
+  height: 260px;
+  left: 32px;
+  top: 10px; /* Ajuste para alinhar com o cabeçalho */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  display: block;
+  position: absolute;
+  z-index: 9999;
+}
+.submenu-circular-180.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+.submenu-circular-inner {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+.submenu-circular-180 .submenu-btn {
+  min-width: 56px;
+  max-width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--azul-escuro1), var(--azul-escuro2), var(--azul-escuro3));
+  color: #fff;
+  border: 3px solid var(--azul-escuro4);
+  box-shadow: 0 6px 32px 0 var(--azul-escuro1), 0 1.5px 0 0 var(--azul-escuro2) inset;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* Distribui os botões em arco, sem sobrepor o cabeçalho */
+  transform: rotate(var(--angle)) translate(120px, 0) rotate(calc(-1 * var(--angle)));
+  transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 60;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.98;
+  padding: 0;
+}
+.submenu-circular-180 .submenu-btn:hover {
+  box-shadow: 0 8px 40px 0 var(--azul-escuro2), 0 2px 0 0 var(--azul-escuro3) inset;
+  background: linear-gradient(90deg, var(--azul-escuro2), var(--azul-escuro3), var(--azul-escuro4));
+  border-color: var(--azul-escuro1);
+  transform: scale(1.08) rotate(var(--angle)) translate(120px, 0) rotate(calc(-1 * var(--angle)));
+}
+.submenu-circular-180 .submenu-btn img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ícone moderno animado */
+.menu-icon-lines {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.menu-icon-lines span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--azul-escuro2), var(--azul-escuro3));
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transition: all 0.3s;
+}
+.menu-icon-lines span:nth-child(1) { top: 6px; }
+.menu-icon-lines span:nth-child(2) { top: 14px; }
+.menu-icon-lines span:nth-child(3) { top: 22px; }
+#menu-icone:hover .menu-icon-lines span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menu-icone:hover .menu-icon-lines span:nth-child(2) {
+  opacity: 0;
+}
+#menu-icone:hover .menu-icon-lines span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const menuBtn = document.getElementById('menu-icone');
+  const submenu = document.getElementById('submenu-circular');
+  let submenuTimeout;
+
+  function showSubmenu() {
+    clearTimeout(submenuTimeout);
+    submenu.classList.add('active');
+  }
+  function hideSubmenu() {
+    submenuTimeout = setTimeout(() => submenu.classList.remove('active'), 200);
+  }
+
+  menuBtn.addEventListener('mouseenter', showSubmenu);
+  menuBtn.addEventListener('mouseleave', hideSubmenu);
+  submenu.addEventListener('mouseenter', showSubmenu);
+  submenu.addEventListener('mouseleave', hideSubmenu);
+
+  // Para acessibilidade via teclado
+  menuBtn.addEventListener('focus', showSubmenu);
+  menuBtn.addEventListener('blur', hideSubmenu);
+});
+</script>
+
+  <!-- HERO -->
+  <section id="home" class="relative flex flex-col items-center justify-center min-h-[60vh] overflow-hidden text-center">
+    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80"
+         alt="Banner exemplo" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+    <div class="relative z-10" data-aos="fade-up">
+      <!-- Logo central -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-6 w-24 drop-shadow-lg" fill="none" viewBox="0 0 48 48" stroke="currentColor">
+        <rect x="6" y="8" width="36" height="28" rx="4" fill="#fff" stroke="#185b8c" stroke-width="3"/>
+        <rect x="14" y="16" width="4" height="4" rx="2" fill="#185b8c"/>
+        <rect x="22" y="16" width="12" height="4" rx="2" fill="#185b8c"/>
+        <rect x="14" y="24" width="20" height="4" rx="2" fill="#185b8c"/>
+        <rect x="14" y="32" width="20" height="2" rx="1" fill="#185b8c"/>
+      </svg>
+      <h1 class="text-5xl font-extrabold mb-4 text-white drop-shadow-lg">Transforme seu negócio com tecnologia de ponta</h1>
+      <p class="text-xl text-white/90 mb-8">Soluções digitais que geram resultados reais para sua empresa.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="https://wa.me/5533999483324" target="_blank" class="btn-destaque-1 flex items-center justify-center gap-2 px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.13 1.6 5.92L0 24l6.21-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.63-.5-5.18-1.44l-.37-.22-3.69.96.99-3.6-.24-.38A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.34-.26.27-1 1-1 2.44 0 1.44 1.03 2.83 1.18 3.03.15.2 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.21.16-1.32-.07-.11-.25-.18-.53-.32z" fill="#fff"/>
+      </svg>
+          WhatsApp
+        </a>
+        <a href="#referencias" class="btn-destaque-2 px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">Referências</a>
+        <a href="#depoimentos" class="btn-destaque-3 px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">Depoimentos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de destaque principal -->
+<section style="
+  background: linear-gradient(120deg, #0a2342 70%, #185b8c 100%);
+  padding: 64px 0 56px 0;
+  border-radius: 0 0 48px 48px;
+  box-shadow: 0 8px 40px 0 #0a234288, 0 2px 0 0 #185b8c inset;
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+">
+  <div style="max-width: 700px; margin: 0 auto; text-align: center; position: relative;">
+    <h1 style="
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 1.5px;
+      text-shadow: 0 4px 24px #185b8c, 0 1px 0 #4f8fc0;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      border: 3px solid #4f8fc0;
+      box-shadow: 0 0 32px #185b8c99;
+      display: inline-block;
+      padding: 18px 38px;
+      background: linear-gradient(100deg, #0a2342 80%, #185b8c 100%);
+      filter: drop-shadow(0 2px 12px #185b8c88);
+      transition: box-shadow 0.3s;
+      animation: pulseTitle 2s infinite alternate;
+    ">
+      Chegou a hora de revolucionar seu negócio!
+    </h1>
+    <p style="
+      color: #a7c7e7;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 32px 0 18px 0;
+      text-shadow: 0 2px 12px #0a2342cc;
+      border-radius: 16px;
+      background: rgba(24,91,140,0.12);
+      padding: 18px 24px;
+      border-left: 5px solid #4f8fc0;
+      border-right: 5px solid #4f8fc0;
+      box-shadow: 0 2px 16px #185b8c33;
+      animation: fadeInUp 1.2s;
+    ">
+      Soluções digitais sob medida, com tecnologia de ponta, design envolvente e suporte de verdade.<br>
+      <span style="color:#fff;font-weight:800;text-shadow:0 2px 8px #185b8c;">Transforme ideias em resultados reais com sistemas que vendem, automatizam e encantam!</span>
+    </p>
+    <div style="
+      margin: 32px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    ">
+      <div style="
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: linear-gradient(90deg, #185b8c 80%, #4f8fc0 100%);
+        border-radius: 18px;
+        padding: 12px 28px;
+        box-shadow: 0 2px 16px #185b8c55;
+        border: 2.5px solid #a7c7e7;
+        font-size: 1.1rem;
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 0 1px 8px #0a2342;
+        animation: fadeInUp 1.8s;
+      ">
+        <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#4f8fc0"/>
+          <path d="M10 17l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>
+          100% dos nossos clientes recomendam a Ikaro Sistemas
+        </span>
+      </div>
+      <div style="
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: linear-gradient(90deg, #0a2342 80%, #185b8c 100%);
+        border-radius: 18px;
+        padding: 12px 28px;
+        box-shadow: 0 2px 16px #185b8c55;
+        border: 2.5px solid #4f8fc0;
+        font-size: 1.1rem;
+        color: #a7c7e7;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 0 1px 8px #0a2342;
+        animation: fadeInUp 2.2s;
+      ">
+        <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#185b8c"/>
+          <path d="M10 16l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>
+          Softwares premiados, suporte ágil e entrega garantida!
+        </span>
+      </div>
+    </div>
+  </div>
+  <!-- Efeito decorativo moderno -->
+  <div style="
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle at 60% 40%, #4f8fc0 0%, #185b8c 80%, transparent 100%);
+    opacity: 0.18;
+    filter: blur(2px);
+    z-index: 0;
+    pointer-events: none;
+  "></div>
+  <div style="
+    position: absolute;
+    left: -100px;
+    bottom: -80px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle at 40% 60%, #185b8c 0%, #0a2342 80%, transparent 100%);
+    opacity: 0.13;
+    filter: blur(2px);
+    z-index: 0;
+    pointer-events: none;
+  "></div>
+</section>
+
+<style>
+@keyframes pulseTitle {
+  0% { box-shadow: 0 0 32px #185b8c99, 0 0 0 #4f8fc0; }
+  100% { box-shadow: 0 0 48px #4f8fc0cc, 0 0 24px #185b8c88; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+</style>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="container mx-auto py-16 px-4 relative overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+         alt="Tela de programação" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none select-none" style="z-index:0;">
+    <div class="relative z-10">
+      <h2 class="text-3xl font-bold text-center mb-12 text-azul-escuro" data-aos="fade-up">Nossos Serviços</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+        <a href="servicos/landing-page/index.html"
+           class="group block bg-azul-escuro bg-opacity-95 p-0 rounded-3xl shadow-2xl border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden relative"
+           data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+               alt="Landing Page" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-extrabold mb-2 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Landing Pages</h3>
+            <p class="text-lg text-white">🚀 Aumente suas vendas com páginas que convertem visitantes em clientes!</p>
+          </div>
+        </a>
+        <a href="servicos/site-institucional/index.html"
+           class="group block bg-azul-escuro bg-opacity-95 p-0 rounded-3xl shadow-2xl border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden relative"
+           data-aos="fade-up" data-aos-delay="150">
+          <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80"
+               alt="Site Institucional" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-extrabold mb-2 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Sites Institucionais</h3>
+            <p class="text-lg text-white">🌐 Sua empresa com presença digital forte, moderna e confiável.</p>
+          </div>
+        </a>
+        <a href="servicos/aplicativos-web/index.html"
+           class="group block bg-azul-escuro bg-opacity-95 p-0 rounded-3xl shadow-2xl border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden relative"
+           data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+               alt="Aplicativo Web" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-extrabold mb-2 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Aplicativos Web</h3>
+            <p class="text-lg text-white">📱 Tenha seu próprio sistema online, acessível de qualquer lugar!</p>
+          </div>
+        </a>
+        <a href="servicos/chatbots/index.html"
+           class="group block bg-azul-escuro bg-opacity-95 p-0 rounded-3xl shadow-2xl border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden relative"
+           data-aos="fade-up" data-aos-delay="250">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
+               alt="Chatbot" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-extrabold mb-2 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Chatbots</h3>
+            <p class="text-lg text-white">🤖 Atendimento automático 24h para encantar seus clientes!</p>
+          </div>
+        </a>
+        <a href="servicos/ecommerce/index.html"
+           class="group block bg-azul-escuro bg-opacity-95 p-0 rounded-3xl shadow-2xl border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden relative"
+           data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=600&q=80"
+               alt="E-commerce" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-extrabold mb-2 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">E-commerce</h3>
+            <p class="text-lg text-white">🛒 Venda online com segurança, praticidade e design incrível.</p>
+          </div>
+        </a>
+        <a href="servicos/sistemas-de-gestao/index.html"
+           class="group block bg-azul-escuro bg-opacity-95 p-0 rounded-3xl shadow-2xl border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden relative"
+           data-aos="fade-up" data-aos-delay="350">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+               alt="Sistema de Gestão" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="p-6">
+            <h3 class="text-2xl font-extrabold mb-2 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Sistemas de Gestão</h3>
+            <p class="text-lg text-white">📊 Controle total do seu negócio, tudo em um só lugar!</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section id="portfolio" class="container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-azul-escuro" data-aos="fade-up">Portfólio</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+      <div class="group rounded-3xl overflow-hidden shadow-2xl bg-azul-escuro border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Landing Page" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+        <div class="p-6">
+          <h4 class="font-extrabold text-xl mb-1 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Landing Page</h4>
+          <p class="text-white text-sm">Página de alta conversão para campanhas.</p>
+        </div>
+      </div>
+      <div class="group rounded-3xl overflow-hidden shadow-2xl bg-azul-escuro border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="150">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Site Institucional" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+        <div class="p-6">
+          <h4 class="font-extrabold text-xl mb-1 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Site Institucional</h4>
+          <p class="text-white text-sm">Presença online para empresas.</p>
+        </div>
+      </div>
+      <div class="group rounded-3xl overflow-hidden shadow-2xl bg-azul-escuro border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Aplicativo Web" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+        <div class="p-6">
+          <h4 class="font-extrabold text-xl mb-1 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Aplicativo Web</h4>
+          <p class="text-white text-sm">Sistema personalizado para gestão.</p>
+        </div>
+      </div>
+      <div class="group rounded-3xl overflow-hidden shadow-2xl bg-azul-escuro border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="250">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Chatbot" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+        <div class="p-6">
+          <h4 class="font-extrabold text-xl mb-1 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Chatbot</h4>
+          <p class="text-white text-sm">Atendimento automatizado para WhatsApp e sites.</p>
+        </div>
+      </div>
+      <div class="group rounded-3xl overflow-hidden shadow-2xl bg-azul-escuro border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=600&q=80" alt="Loja Virtual" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+        <div class="p-6">
+          <h4 class="font-extrabold text-xl mb-1 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Loja Virtual</h4>
+          <p class="text-white text-sm">Exemplo de loja virtual moderna e segura.</p>
+        </div>
+      </div>
+      <div class="group rounded-3xl overflow-hidden shadow-2xl bg-azul-escuro border-4 border-azul-claro hover:border-pink-500 hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="350">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="Sistema de Gestão" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300">
+        <div class="p-6">
+          <h4 class="font-extrabold text-xl mb-1 text-pink-500 drop-shadow-lg border-b-2 border-pink-500 inline-block">Sistema de Gestão</h4>
+          <p class="text-white text-sm">Controle total do seu negócio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERÊNCIAS -->
+  <section id="referencias" class="container mx-auto py-8 px-4 relative overflow-hidden" style="min-height:220px;">
+    <!-- Imagem de fundo -->
+    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=1200&q=80"
+         alt="Fundo referências" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" style="z-index:0;">
+    <div class="relative z-10">
+      <h2 class="text-2xl font-bold text-center mb-6 text-azul-escuro" data-aos="fade-up">Referências</h2>
+      <div class="scroll-x scroll-hide flex gap-6 pb-2" id="referencias-carousel">
+        <!-- 8 referências de empresas fictícias -->
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-escuro">TechNova</h3>
+          <p class="text-gray-700">"O sistema ficou incrível, superou nossas expectativas! 🚀"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Amanda Torres, CEO</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-medio">BlueSoft</h3>
+          <p class="text-gray-700">"Atendimento rápido e soluções inovadoras. Recomendo! 💡"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Felipe Duarte, Diretor</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-claro">InovaWeb</h3>
+          <p class="text-gray-700">"Nossa landing page converte muito mais agora! 👏"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Carla Mendes, Marketing</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-pastel">PrimeCode</h3>
+          <p class="text-gray-700">"O chatbot facilitou nosso suporte. Clientes amam! 🤖"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Bruno Silva, Suporte</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-escuro">WebFlex</h3>
+          <p class="text-gray-700">"Aplicativo web intuitivo e seguro. Parabéns! 🔒"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Renata Lima, TI</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-medio">NextStore</h3>
+          <p class="text-gray-700">"Nosso e-commerce ficou lindo e vende muito! 🛒"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Paulo Souza, E-commerce</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-claro">SmartBiz</h3>
+          <p class="text-gray-700">"Sistema de gestão prático e eficiente. Recomendo! 📊"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Juliana Castro, Gerente</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition" data-aos="fade-right">
+          <h3 class="text-lg font-semibold mb-2 text-azul-pastel">CloudWave</h3>
+          <p class="text-gray-700">"Equipe dedicada e resultado excelente! ⭐"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Daniel Martins, CTO</span>
+        </div>
+      </div>
+      <div class="flex justify-center mt-2 gap-2">
+        <button id="ref-prev" class="btn-destaque-4 px-3 py-1 rounded-full shadow hover:scale-110 transition">&larr;</button>
+        <button id="ref-next" class="btn-destaque-5 px-3 py-1 rounded-full shadow hover:scale-110 transition">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="bg-[#eaf0fa] py-4 relative overflow-hidden" style="min-height:110px;">
+    <!-- Imagem de fundo com logos -->
+    <img src="https://img.freepik.com/vetores-gratis/conjunto-de-logotipos-de-tecnologia_53876-116684.jpg?size=626&ext=jpg"
+         alt="Logos empresas" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" style="z-index:0;">
+    <div class="container mx-auto max-w-5xl relative z-10">
+      <h2 class="text-2xl font-bold text-center mb-4 text-azul-escuro" data-aos="fade-up">Depoimentos</h2>
+      <div class="scroll-x scroll-hide flex gap-6 pb-2" id="depoimentos-carousel" style="min-height:110px;">
+        <!-- 20 depoimentos reais e engajados, 5 por vez -->
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-claro" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Simplesmente sensacional! Atendimento rápido e resultado top! ⭐⭐⭐⭐⭐"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Lucas Silva 😃</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-medio" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Meu site ficou lindo e já estou recebendo mais clientes! 👏💻"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Ana Beatriz 🥰</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-escuro" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Equipe dedicada, sempre pronta a ajudar. Recomendo demais! 🙌"</p>
+          <span class="block mt-2 text-xs text-gray-500">— João Pedro 🚀</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-pastel" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"O chatbot facilitou muito meu atendimento. Parabéns! 🤖💬"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Camila Rocha 😍</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-claro" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Sistema de gestão intuitivo e eficiente. Salvou meu negócio! 💡"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Rafael Costa 🏆</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-medio" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Amei o design do meu e-commerce. Vendas subiram! 🛒💙"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Juliana Alves 😁</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-escuro" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Landing page perfeita, já tive retorno no primeiro dia! 🚀"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Bruno Lima 😎</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-pastel" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Superaram minhas expectativas em todos os detalhes! 👏"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Fernanda Souza 🤩</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-claro" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Recomendo para todos que querem crescer online! 💻🔥"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Pedro Henrique 😁</span>
+        </div>
+        <div class="min-w-[260px] bg-white bg-opacity-90 p-5 rounded-xl shadow-lg hover:shadow-2xl transition border border-azul-medio" data-aos="fade-up">
+          <p class="text-base text-gray-800 italic">"Atendimento nota 10, sempre disponíveis! 👍"</p>
+          <span class="block mt-2 text-xs text-gray-500">— Mariana Dias 😊</span>
+        </div>
+        <!-- ...continue até 20 depoimentos... -->
+      </div>
+      <div class="flex justify-center mt-2 gap-2">
+        <button id="dep-prev" class="btn-destaque-6 px-3 py-1 rounded-full shadow hover:scale-110 transition">&larr;</button>
+        <button id="dep-next" class="btn-destaque-1 px-3 py-1 rounded-full shadow hover:scale-110 transition">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO (substituído por Quanto custa para desenvolver um site?) -->
+  <section id="contato" class="gradient-bg py-16">
+    <div class="container mx-auto max-w-2xl bg-gradient-to-br from-[#0a2342] to-[#185b8c] p-10 rounded-2xl shadow-2xl">
+      <h2 class="text-3xl font-extrabold mb-6 text-center text-white drop-shadow-lg">Quanto custa para desenvolver um site?</h2>
+      <p class="text-lg text-white text-center mb-8">
+        O valor de um site pode variar bastante conforme a complexidade e as funcionalidades desejadas.<br>
+        Os projetos mais simples costumam ficar na faixa de <span class="font-bold text-azul-pastel">R$700,00</span>, enquanto sites mais completos e personalizados podem chegar a <span class="font-bold text-azul-pastel">R$5.000,00 a R$6.000,00</span>.<br>
+        O ideal é fazer um orçamento sem compromisso, assim posso analisar sua necessidade e passar o valor exato e também o prazo de entrega.
+      </p>
+      <div class="flex justify-center">
+        <a href="https://wa.me/5533999483324" target="_blank"
+           class="px-8 py-4 rounded-full font-bold text-white text-lg shadow-lg transition hover:scale-105"
+           style="background:linear-gradient(90deg,#ec4899 0%,#f472b6 100%);">
+          DESCOBRIR O VALOR DO MEU SITE
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="
+  width: 100%;
+  background: linear-gradient(90deg, #0a2342 60%, #185b8c 100%);
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  box-shadow: 0 -4px 24px #0a234288;
+  padding: 24px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  ">
+  <!-- Logo de programação -->
+  <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:linear-gradient(135deg,#185b8c 60%,#4f8fc0 100%);border-radius:14px;box-shadow:0 2px 8px #185b8c44;">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect x="2" y="6" width="28" height="20" rx="5" fill="#fff" stroke="#185b8c" stroke-width="2"/>
+      <path d="M12 16l-4 4 4-4-4-4" stroke="#185b8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 16l4 4-4-4 4-4" stroke="#185b8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="14" y="12" width="4" height="8" rx="2" fill="#185b8c"/>
+    </svg>
+  </span>
+  <span style="font-size:1.3rem;font-weight:800;letter-spacing:1px;color:#fff;text-shadow:0 2px 8px #185b8c88;">
+    Ikaro Sistemas
+  </span>
+  <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" style="margin-left:18px; display:flex; align-items:center; background: #fff; border-radius: 50%; box-shadow: 0 2px 12px #185b8c44; padding: 4px;">
+    <svg width="32" height="32" viewBox="0 0 38 38" fill="none">
+      <circle cx="19" cy="19" r="19" fill="#25D366"/>
+      <path d="M27.5 22.5c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.7-.2-1 .2-.3.4-1.1 1.2-1.3 1.4-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.7.1-.2 0-.5 0-.7 0-.2-.9-2.2-1.2-3-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.5 0 1.5 1.1 3 1.2 3.2.1.2 2.2 3.4 5.3 4.6 1.1.5 2 .8 2.7 1 .4.1.7.1 1 .1.3 0 .9-.1 1.2-.6.3-.5 1.3-1.3 1.3-1.4.1-.1.1-.2.1-.3 0-.1-.1-.2-.2-.3z" fill="#fff"/>
+    </svg>
+  </a>
+</footer>
+
+  <!-- JS: Menu mobile, formulário, animações e carrosséis -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // AOS Animation
+    AOS.init({ once: true, duration: 800 });
+
+    // Carrossel Referências
+    const refCarousel = document.getElementById('referencias-carousel');
+    let refScroll = 0;
+    document.getElementById('ref-prev').onclick = () => {
+      refScroll = Math.max(refScroll - 340, 0);
+      refCarousel.scrollTo({ left: refScroll, behavior: 'smooth' });
+    };
+    document.getElementById('ref-next').onclick = () => {
+      refScroll = Math.min(refScroll + 340, refCarousel.scrollWidth - refCarousel.clientWidth);
+      refCarousel.scrollTo({ left: refScroll, behavior: 'smooth' });
+    };
+
+    // Carrossel Depoimentos
+    const depCarousel = document.getElementById('depoimentos-carousel');
+    let depScroll = 0;
+    document.getElementById('dep-prev').onclick = () => {
+      depScroll = Math.max(depScroll - 340, 0);
+      depCarousel.scrollTo({ left: depScroll, behavior: 'smooth' });
+    };
+    document.getElementById('dep-next').onclick = () => {
+      depScroll = Math.min(depScroll + 340, depCarousel.scrollWidth - depCarousel.clientWidth);
+      depCarousel.scrollTo({ left: depScroll, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>
